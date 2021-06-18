@@ -12,7 +12,7 @@ fun bindingFragmentKt(
     
 package $packageName
 import android.os.Bundle
-import com.smile.base.ui.activity.BaseBindingActivity
+import com.smile.base.ui.fg.BaseBindingFragment
 import ${applicationPackage}.R
 import ${applicationPackage}.databinding.Fragment${activityClass}Binding
 class ${activityClass}Fragment : BaseBindingFragment<Fragment${activityClass}Binding>() {
