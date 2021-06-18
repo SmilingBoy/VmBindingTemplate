@@ -1,16 +1,18 @@
-package other.activity
+package other.fragment
+
 
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.activities.common.MIN_API
 
-val bindingActivityTemplate
+val bindingFragmentTemplate
     get() = template {
         revision = 1
-        name = "Binding Activity"
-        description = "用于创建ViewBindingActivity"
+        name = "Binding Fragment"
+        description = "用于创建ViewBindingFragment"
         minApi = MIN_API
         minBuildApi = MIN_API
         category = Category.Other
+
         formFactor = FormFactor.Mobile
         screens = listOf(
             WizardUiContext.ActivityGallery,
@@ -23,18 +25,18 @@ val bindingActivityTemplate
         lateinit var layoutName: StringParameter
 
         val activityClass = stringParameter {
-            name = "Activity Name"
+            name = "Fragment Name"
             default = "Main"
-            help = "只输入名字，不要包含Activity"
+            help = "只输入名字，不要包含Fragment"
             constraints = listOf(Constraint.NONEMPTY)
         }
 
         layoutName = stringParameter {
             name = "Layout Name"
-            default = "activity_main"
+            default = "fragment_main"
             help = "请输入布局的名字"
             constraints = listOf(Constraint.LAYOUT, Constraint.UNIQUE, Constraint.NONEMPTY)
-            suggest = { "${activityToLayout(activityClass.value)}" }
+            suggest = { "${fragmentToLayout(activityClass.value)}" }
         }
         val packageName = defaultPackageNameParameter
 
@@ -44,11 +46,12 @@ val bindingActivityTemplate
             PackageNameWidget(packageName)
         )
         recipe = { data: TemplateData ->
-            bindingActivityRecipe(
+            bindingFragmentRecipe(
                 data as ModuleTemplateData,
                 activityClass.value,
                 layoutName.value,
-                packageName.value)
+                packageName.value
+            )
         }
     }
 
