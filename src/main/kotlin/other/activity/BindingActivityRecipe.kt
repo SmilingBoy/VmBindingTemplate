@@ -6,6 +6,23 @@ import com.android.tools.idea.wizard.template.impl.activities.common.generateMan
 import other.activity.res.bindingActivityXml
 import other.activity.src.bindingAcitivityKt
 
+public fun com.android.tools.idea.wizard.template.RecipeExecutor.generateManifest(
+    moduleData: com.android.tools.idea.wizard.template.ModuleTemplateData,
+    activityClass: kotlin.String,
+    packageName: kotlin.String,
+    isLauncher: kotlin.Boolean,
+    hasNoActionBar: kotlin.Boolean,
+    noActionBarTheme: com.android.tools.idea.wizard.template.ThemeData /* = compiled code */,
+    isNewModule: kotlin.Boolean /* = compiled code */,
+    isLibrary: kotlin.Boolean /* = compiled code */,
+    manifestOut: java.io.File /* = compiled code */,
+    baseFeatureResOut: java.io.File /* = compiled code */,
+    generateActivityTitle: kotlin.Boolean,
+    isResizeable: kotlin.Boolean /* = compiled code */
+): kotlin.Unit { /* compiled code */
+}
+
+
 fun RecipeExecutor.bindingActivityRecipe(
     moduleData: ModuleTemplateData,
     activityClass: String,
@@ -17,7 +34,6 @@ fun RecipeExecutor.bindingActivityRecipe(
     generateManifest(
         moduleData = moduleData,
         activityClass = "${activityClass}Activity",
-        activityTitle = activityClass,
         packageName = packageName,
         isLauncher = false,
         hasNoActionBar = false,

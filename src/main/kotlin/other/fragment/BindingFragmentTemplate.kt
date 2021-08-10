@@ -6,11 +6,11 @@ import com.android.tools.idea.wizard.template.impl.activities.common.MIN_API
 
 val bindingFragmentTemplate
     get() = template {
-        revision = 1
+//        revision = 1
         name = "Binding Fragment"
         description = "用于创建ViewBindingFragment"
         minApi = MIN_API
-        minBuildApi = MIN_API
+//        minBuildApi = MIN_API
         category = Category.Other
 
         formFactor = FormFactor.Mobile
